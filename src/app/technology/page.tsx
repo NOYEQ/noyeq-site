@@ -1,0 +1,173 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Cpu, Code2, Database, Cloud, Terminal, Server, ArrowRight, ShieldCheck, Zap, Repeat } from 'lucide-react';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import PageTransition from '@/components/PageTransition';
+
+const techGroups = [
+  {
+    title: "Client-Side & Interfaces",
+    icon: Cpu,
+    color: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",
+    techs: [
+      { name: "Next.js & React 19", role: "SSR & SPA interface frameworks", detail: "Provides hydration speed and Largest Contentful Paint (LCP) optimizations." },
+      { name: "TypeScript", role: "Strict compile-time type verification", detail: "Eliminates syntax failures and simplifies code reviews." },
+      { name: "Tailwind CSS v4", role: "Utility styling & CSS theme variables", detail: "Supports responsive, lightweight utility grids and dark themes." }
+    ]
+  },
+  {
+    title: "Server & Application Logic",
+    icon: Server,
+    color: "text-indigo-400 bg-indigo-500/10 border-indigo-500/20",
+    techs: [
+      { name: ".NET Core (C#)", role: "Enterprise backend service layer", detail: "Supports massive parallel executions, multi-threading, and secure APIs." },
+      { name: "Node.js & Express", role: "Fast asynchronous API routing", detail: "Used for developer utilities, compilers, and serverless edge functions." },
+      { name: "REST APIs & GraphQL", role: "Self-documenting data endpoints", detail: "Designed with strict Zod input validates and security checks." }
+    ]
+  },
+  {
+    title: "Databases & Storage Systems",
+    icon: Database,
+    color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+    techs: [
+      { name: "PostgreSQL", role: "Primary relational database layer", detail: "Optimized with complex indexing, JSONB storage, and read replication." },
+      { name: "Prisma ORM", role: "Type-safe database query client", detail: "Generates strict client schemas, preventing runtime SQL injection." },
+      { name: "Redis Cache", role: "In-memory caching and session store", detail: "Drastically lowers database queries, keeping responses below 10ms." }
+    ]
+  },
+  {
+    title: "DevOps & Cloud Systems",
+    icon: Cloud,
+    color: "text-purple-400 bg-purple-500/10 border-purple-500/20",
+    techs: [
+      { name: "Docker & Containers", role: "Standardized execution nodes", detail: "Ensures parity between development, testing, and production environments." },
+      { name: "Microsoft Azure & AWS", role: "Global cloud hosting networks", detail: "Orchestrates load balancers, database clusters, and DNS rules." },
+      { name: "CI/CD & GitHub Actions", role: "Automated unit tests & deployments", detail: "Builds, audits, and deploys codebases upon code merges automatically." }
+    ]
+  }
+];
+
+const philosophyItems = [
+  {
+    icon: ShieldCheck,
+    title: "Strict Static Typing",
+    desc: "We enforce complete static typing (TypeScript & C#). Any code utilizing 'any' typings or loosely structured inputs is rejected at compile time. This yields absolute security."
+  },
+  {
+    icon: Zap,
+    title: "Performance Budgets",
+    desc: "Our products follow strict speed parameters: sub-50ms server responses, sub-second client renders, and 100/100 scores in search engine optimization and responsiveness audits."
+  },
+  {
+    icon: Repeat,
+    title: "Idempotent Architectures",
+    desc: "Our databases, background compilers, and task queues are structured to support safe, repetitive actions, eliminating duplicates and preventing system corruptions."
+  }
+];
+
+export default function Technology() {
+  return (
+    <PageTransition>
+      <div className="flex flex-col gap-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        {/* Page Title */}
+        <section className="flex flex-col gap-4 max-w-3xl">
+          <span className="text-xs text-indigo-400 font-bold font-heading uppercase tracking-widest">
+            Engineering Core
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-bold font-heading text-white tracking-tight leading-[1.1]">
+            Our Engineering Philosophy & Stack
+          </h1>
+          <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
+            We select technologies based on scalability, speed, and standard developer compliance. Our products combine stable C# enterprise modules with modern React and Next.js interfaces.
+          </p>
+        </section>
+
+        {/* Philosophy Points */}
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {philosophyItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.title} className="glass-panel p-8 rounded-2xl flex flex-col gap-4 relative overflow-hidden">
+                {/* Visual accent */}
+                <div className="absolute right-0 bottom-0 w-24 h-24 bg-white/[0.01] rounded-tl-full pointer-events-none" />
+                
+                <div className="p-2.5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 w-fit">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold font-heading text-white">{item.title}</h3>
+                <p className="text-neutral-400 text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            );
+          })}
+        </section>
+
+        {/* Tech Group Catalog */}
+        <section className="flex flex-col gap-16 border-t border-white/[0.06] pt-16">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-white">Technological Matrix</h2>
+            <p className="text-neutral-400 text-sm sm:text-base max-w-xl">
+              An inventory of core framework selections deployed across NQForge, AI pipelines, and enterprise systems.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {techGroups.map((group) => {
+              const GroupIcon = group.icon;
+              return (
+                <div key={group.title} className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/[0.05] flex flex-col gap-6">
+                  
+                  {/* Group header */}
+                  <div className="flex items-center gap-3.5">
+                    <div className={`p-3 rounded-xl border ${group.color}`}>
+                      <GroupIcon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-xl font-bold font-heading text-white">{group.title}</h3>
+                  </div>
+
+                  {/* Tech stack items inside group */}
+                  <div className="flex flex-col gap-6 mt-2">
+                    {group.techs.map((tech) => (
+                      <div key={tech.name} className="flex flex-col gap-1 border-l-2 border-white/[0.08] pl-4">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h4 className="text-sm font-bold text-white font-heading">{tech.name}</h4>
+                          <span className="text-[10px] text-neutral-400 font-semibold uppercase">{tech.role}</span>
+                        </div>
+                        <p className="text-neutral-400 text-xs mt-0.5 leading-relaxed">{tech.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Tech Stack Banner CTA */}
+        <section className="glass-panel rounded-3xl p-8 sm:p-12 border border-white/[0.06] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 blur-[80px] pointer-events-none" />
+          <div className="flex flex-col gap-4 max-w-xl">
+            <h3 className="text-2xl font-bold font-heading text-white">Review our system architectures</h3>
+            <p className="text-neutral-400 text-sm leading-relaxed">
+              We compile code following strict guidelines, supporting docker deployment, serverless routing rules, and multi-region database replications. Let's build your enterprise architecture.
+            </p>
+          </div>
+          <Link 
+            href="/contact"
+            className={cn(
+              buttonVariants({ variant: "default" }),
+              "bg-white text-black hover:bg-neutral-200 rounded-full font-semibold px-6 h-11 flex-shrink-0 transition-all duration-300 glow-btn flex items-center gap-1.5 justify-center"
+            )}
+          >
+            Consult Architect
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </section>
+
+      </div>
+    </PageTransition>
+  );
+}
