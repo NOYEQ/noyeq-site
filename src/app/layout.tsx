@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     title: "NOYEQ | Building the Future through Software & AI",
     description: "Discover the NOYEQ digital product ecosystem and custom software engineering solutions.",
   },
+  icons: {
+    icon: "/noyeq_logo.png",
+    shortcut: "/noyeq_logo.png",
+    apple: "/noyeq_logo.png",
+  },
   robots: {
     index: true,
     follow: true,
