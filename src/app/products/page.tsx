@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Terminal, Sparkles, Smartphone, Share2, ShieldAlert, Cpu, ExternalLink, ArrowRight, Layers, HelpCircle } from 'lucide-react';
+import { Terminal, Sparkles, Smartphone, Share2, Cpu, ExternalLink, ArrowRight, Layers, HelpCircle } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';

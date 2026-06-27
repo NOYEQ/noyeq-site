@@ -39,7 +39,7 @@ export default function Contact() {
     }
   });
 
-  const onSubmit = async (data: ContactFormValues) => {
+  const onSubmit = async () => {
     setIsSubmitting(true);
     // Simulate API compile and write
     await new Promise(resolve => setTimeout(resolve, 1500));
@@ -59,7 +59,7 @@ export default function Contact() {
             Inquiries
           </span>
           <h1 className="text-4xl sm:text-5xl font-bold font-heading text-white tracking-tight leading-[1.1]">
-            Let's build something durable.
+            Let&apos;s build something durable.
           </h1>
           <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
             Reach out to our strategy desk. Whether you have a custom software project request, an ecosystem partnership brief, or a product proposal, we are ready to align.

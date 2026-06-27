@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Github, Twitter, Linkedin, Mail } from 'lucide-react';
 import { useState } from 'react';
 
@@ -28,29 +29,14 @@ export default function Footer() {
           
           {/* Brand block */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-2.5">
-              <svg 
-                width="32" 
-                height="32" 
-                viewBox="0 0 100 100" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-white"
-              >
-                <rect x="15" y="15" width="70" height="70" rx="16" stroke="currentColor" strokeWidth="10" className="opacity-40" />
-                <path d="M50 15V85" stroke="currentColor" strokeWidth="10" strokeLinecap="round" />
-                <path d="M15 50H85" stroke="currentColor" strokeWidth="10" strokeLinecap="round" />
-                <circle cx="50" cy="50" r="12" fill="url(#footer-logo-grad)" />
-                <defs>
-                  <linearGradient id="footer-logo-grad" x1="0" y1="0" x2="100" y2="100">
-                    <stop stopColor="#6366f1" />
-                    <stop offset="1" stopColor="#06b6d4" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <span className="font-heading font-bold text-xl tracking-wider text-white">
-                NOYEQ
-              </span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/noyeq_logo.png"
+                alt="NOYEQ"
+                width={220}
+                height={56}
+                className="h-9 sm:h-10 w-auto"
+              />
             </Link>
             <p className="text-neutral-400 text-sm max-w-sm leading-relaxed">
               NOYEQ is a leading global technology house building the future of software, artificial intelligence, and automated platforms. We design digital products that empower human potential.

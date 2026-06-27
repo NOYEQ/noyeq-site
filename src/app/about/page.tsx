@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Eye, Shield, Target, Users, Landmark, Flame } from 'lucide-react';
 import PageTransition from '@/components/PageTransition';
 
@@ -110,7 +109,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {principles.map((pr, idx) => {
+            {principles.map((pr) => {
               const Icon = pr.icon;
               return (
                 <div key={pr.title} className="glass-panel p-8 rounded-2xl flex flex-col gap-4">
@@ -135,7 +134,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {leaders.map((leader, i) => (
+            {leaders.map((leader) => (
               <div 
                 key={leader.name}
                 className="glass-panel p-8 rounded-2xl flex flex-col gap-6 relative overflow-hidden"

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Briefcase, Sparkles, MapPin, Code2, Layers, PenTool } from 'lucide-react';
+import { Briefcase, Sparkles, MapPin, Code2, Layers, PenTool } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import PageTransition from '@/components/PageTransition';
 

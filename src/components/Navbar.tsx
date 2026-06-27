@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -38,11 +38,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pt-4 pointer-events-none">
       <motion.div
@@ -57,29 +52,15 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <svg 
-              width="28" 
-              height="28" 
-              viewBox="0 0 100 100" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-white transition-transform duration-500 group-hover:rotate-[180deg]"
-            >
-              <rect x="15" y="15" width="70" height="70" rx="16" stroke="currentColor" strokeWidth="10" className="opacity-40" />
-              <path d="M50 15V85" stroke="currentColor" strokeWidth="10" strokeLinecap="round" />
-              <path d="M15 50H85" stroke="currentColor" strokeWidth="10" strokeLinecap="round" />
-              <circle cx="50" cy="50" r="12" fill="url(#logo-grad)" />
-              <defs>
-                <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100">
-                  <stop stopColor="#6366f1" />
-                  <stop offset="1" stopColor="#06b6d4" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <span className="font-heading font-bold text-lg tracking-wider text-white">
-              NOYEQ
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/noyeq_logo.png"
+              alt="NOYEQ"
+              width={220}
+              height={56}
+              priority
+              className="h-8 sm:h-9 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -159,6 +140,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={`block py-2 text-base font-medium transition-colors ${
                       pathname === item.path ? 'text-white font-semibold' : 'text-neutral-400'
                     }`}
@@ -180,6 +162,7 @@ export default function Navbar() {
               <div className="border-t border-white/[0.08] pt-4 mt-2">
                 <Link 
                   href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
                   className={cn(
                     buttonVariants({ variant: "default" }),
                     "w-full bg-white text-black hover:bg-neutral-200 rounded-full py-5 text-sm font-semibold justify-center shadow-lg flex items-center"

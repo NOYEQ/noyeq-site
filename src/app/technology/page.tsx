@@ -1,7 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Cpu, Code2, Database, Cloud, Terminal, Server, ArrowRight, ShieldCheck, Zap, Repeat } from 'lucide-react';
+import { Cpu, Database, Cloud, Server, ArrowRight, ShieldCheck, Zap, Repeat } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -152,7 +151,7 @@ export default function Technology() {
           <div className="flex flex-col gap-4 max-w-xl">
             <h3 className="text-2xl font-bold font-heading text-white">Review our system architectures</h3>
             <p className="text-neutral-400 text-sm leading-relaxed">
-              We compile code following strict guidelines, supporting docker deployment, serverless routing rules, and multi-region database replications. Let's build your enterprise architecture.
+              We compile code following strict guidelines, supporting docker deployment, serverless routing rules, and multi-region database replications. Let&apos;s build your enterprise architecture.
             </p>
           </div>
           <Link 

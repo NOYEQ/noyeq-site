@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Terminal, AppWindow, Smartphone, Cloud, Cog, Share2, Layers, ShieldAlert, PenTool, HelpCircle, ArrowRight } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -122,7 +121,7 @@ export default function Services() {
 
               {/* Group Services Grid */}
               <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {group.services.map((service, idx) => {
+                {group.services.map((service) => {
                   const Icon = service.icon;
                   return (
                     <div 

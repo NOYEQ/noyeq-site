@@ -173,7 +173,7 @@ export default function Process() {
                       {phases[selectedPhase].name}
                     </h2>
                     <p className="text-sm text-neutral-300 italic">
-                      "{phases[selectedPhase].subtitle}"
+                      &ldquo;{phases[selectedPhase].subtitle}&rdquo;
                     </p>
                   </div>
 
