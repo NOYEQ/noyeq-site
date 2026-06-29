@@ -46,7 +46,7 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className={`mx-auto max-w-7xl w-full pointer-events-auto rounded-full transition-all duration-300 ${
           scrolled 
-            ? 'bg-neutral-950/95 backdrop-blur-xl border border-white/10 shadow-2xl py-3 px-6' 
+            ? 'bg-neutral-900/95 backdrop-blur-xl border border-white/10 shadow-2xl py-3 px-6' 
             : 'bg-transparent border-transparent py-5 px-4'
         }`}
       >
