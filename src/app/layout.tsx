@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     description: "Discover the NOYEQ digital product ecosystem and custom software engineering solutions.",
   },
   icons: {
-    icon: "/noyeq_logo.png",
-    shortcut: "/noyeq_logo.png",
-    apple: "/noyeq_logo.png",
+    icon: [{ url: "/favicon.ico", sizes: "64x64", type: "image/x-icon" }],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   robots: {
     index: true,
