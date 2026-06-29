@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Terminal, Sparkles, Smartphone, Share2, Cpu, ExternalLink, ArrowRight, Layers, HelpCircle } from 'lucide-react';
+import { Terminal, Sparkles, Share2, ExternalLink, ArrowRight, Layers, HelpCircle } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -13,7 +13,7 @@ const categories = ['All', 'Active', 'Beta', 'Pipeline'];
 const productsList = [
   {
     id: "nqforge",
-    title: "NQForge",
+    title: "NQ Forge",
     tag: "Active",
     tagClass: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
     category: "Active",
@@ -22,14 +22,27 @@ const productsList = [
     features: ["Fully serverless engine", "50+ Developer tools built-in", "Zero setup required"],
     icon: Terminal,
     link: "#",
-    linkText: "Launch NQForge"
+    linkText: "Launch NQ Forge"
   },
   {
-    id: "core-ai",
-    title: "NOYEQ Core AI",
-    tag: "Beta",
-    tagClass: "bg-indigo-500/20 text-indigo-400 border-indigo-500/30",
-    category: "Beta",
+    id: "noyeq-foods",
+    title: "NOYEQ Foods: Peanut Butter",
+    tag: "Pipeline",
+    tagClass: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+    category: "Pipeline",
+    type: "FMCG / Physical Goods",
+    description: "A premium, sustainably sourced peanut butter product line launching in Sri Lanka. Blending exceptional taste with ethical supply chain logistics.",
+    features: ["Local Sourcing", "Sustainable Production", "Nutritional Focus"],
+    icon: Layers,
+    link: "#",
+    linkText: "View Initiative"
+  },
+  {
+    id: "future-ai",
+    title: "Future AI Products",
+    tag: "Coming Soon",
+    tagClass: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+    category: "Pipeline",
     type: "AI & Automation",
     description: "Orchestrate multi-agent autonomous logic workflows. Designed to translate natural language inquiries directly into backend database migrations and system commands.",
     features: ["Agentic reasoning models", "Enterprise context storage", "Custom API connectors"],
@@ -38,56 +51,30 @@ const productsList = [
     linkText: "Request Access"
   },
   {
-    id: "mobile-platform",
-    title: "NOYEQ Mobile",
+    id: "developer-tools",
+    title: "Developer Tools",
     tag: "Beta",
-    tagClass: "bg-indigo-500/20 text-indigo-400 border-indigo-500/30",
+    tagClass: "bg-purple-500/20 text-purple-400 border-purple-500/30",
     category: "Beta",
-    type: "Mobile Applications",
-    description: "Secure cross-platform dashboard for remote server monitoring, container metrics, and instant error alerts synced directly to iOS and Android.",
-    features: ["Biometric verification", "Websocket live sync", "Custom telemetry graphs"],
-    icon: Smartphone,
-    link: "#",
-    linkText: "View Prototype"
-  },
-  {
-    id: "nqlink-api",
-    title: "NQLink API",
-    tag: "Pipeline",
-    tagClass: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-    category: "Pipeline",
-    type: "APIs & Geolocation",
-    description: "High-performance edge APIs for instant country code lookup, client request translation, security validation, and static database caches.",
-    features: ["Sub-5ms global response", "Secure JWT validation", "Robust DDoS mitigation"],
+    type: "Utilities & APIs",
+    description: "Specialized command-line interfaces, testing frameworks, and advanced development utilities for engineering teams.",
+    features: ["Sub-5ms global response", "Secure validation", "Zero dependencies"],
     icon: Share2,
     link: "#",
     linkText: "View Documentation"
   },
   {
-    id: "enterprise-hub",
-    title: "NOYEQ Enterprise",
+    id: "innovation-lab",
+    title: "Global Innovation Lab",
     tag: "Pipeline",
     tagClass: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
     category: "Pipeline",
-    type: "Business Software",
-    description: "Custom internal dashboards built for supply chains, client ticketing architectures, and automated inventory sync networks.",
-    features: ["Active PostgreSQL replication", "Custom workspace roles", "Docker container bundles"],
-    icon: Layers,
+    type: "Research & Development",
+    description: "Experimental ventures testing the boundary of what's possible across spatial computing, sustainable agriculture, and ambient intelligence systems.",
+    features: ["Advanced R&D", "Strategic Partnerships", "Cross-Sector Prototyping"],
+    icon: HelpCircle,
     link: "#",
-    linkText: "Request Briefing"
-  },
-  {
-    id: "oss-tools",
-    title: "NQ Open Source",
-    tag: "Active",
-    tagClass: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-    category: "Active",
-    type: "Open-Source Packages",
-    description: "A growing collection of lightweight theme engines, Tailwind layout helpers, and Next.js boilerplate packages published for the dev community.",
-    features: ["MIT Licensed", "Strict TypeScript typings", "Zero extra dependencies"],
-    icon: Cpu,
-    link: "#",
-    linkText: "Explore Repos"
+    linkText: "Read the Journal"
   }
 ];
 
@@ -105,14 +92,14 @@ export default function Products() {
         {/* Page Heading */}
         <section className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="flex flex-col gap-4 max-w-2xl">
-            <span className="text-xs text-indigo-400 font-bold font-heading uppercase tracking-widest">
-              Digital Ventures
+            <span className="text-xs text-purple-400 font-bold font-heading uppercase tracking-widest">
+              Global Brands & Products
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold font-heading text-white tracking-tight leading-[1.1]">
-              The NOYEQ Ecosystem
+              NOYEQ Ventures
             </h1>
             <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
-              We design modular, high-capacity products across compilers, automation engines, APIs, and client-centric databases. All aligned under our unified engineering core.
+              We design modular, high-capacity products across diverse sectors. From rapid code compilers to consumer food products, all aligned under our unified foundation.
             </p>
           </div>
 
@@ -161,11 +148,11 @@ export default function Products() {
                     className="glass-panel glass-panel-hover rounded-3xl flex flex-col justify-between overflow-hidden relative"
                   >
                     {/* Glowing highlight corner */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/[0.03] rounded-bl-full pointer-events-none" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/[0.03] rounded-bl-full pointer-events-none" />
 
                     <div className="p-8 flex flex-col gap-6">
                       <div className="flex items-center justify-between">
-                        <div className="p-3 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 rounded-2xl w-fit">
+                        <div className="p-3 bg-purple-500/10 border border-purple-500/20 text-purple-400 rounded-2xl w-fit">
                           <Icon className="w-6 h-6" />
                         </div>
                         <div className="flex items-center gap-2">
@@ -199,7 +186,7 @@ export default function Products() {
                       </span>
                       <a 
                         href={product.link}
-                        className="flex items-center gap-1.5 text-xs font-bold text-white hover:text-indigo-400 transition-colors"
+                        className="flex items-center gap-1.5 text-xs font-bold text-white hover:text-purple-400 transition-colors"
                       >
                         {product.linkText}
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -218,11 +205,11 @@ export default function Products() {
           
           <div className="flex flex-col gap-4 max-w-xl">
             <h3 className="text-xl font-bold font-heading text-white flex items-center gap-2">
-              <HelpCircle className="w-5 h-5 text-indigo-400" />
-              Do you have a product proposal?
+              <HelpCircle className="w-5 h-5 text-purple-400" />
+              Do you have a venture proposal?
             </h3>
             <p className="text-neutral-400 text-sm leading-relaxed">
-              We frequently partner with talented software entrepreneurs, creators, and engineers to bootstrap, design, and release new technology platforms. Get in touch to present your idea.
+              We frequently partner with talented innovators, creators, and operators to bootstrap, design, and release new ventures across digital and physical sectors. Get in touch to present your idea.
             </p>
           </div>
 

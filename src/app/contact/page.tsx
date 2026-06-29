@@ -15,9 +15,10 @@ import PageTransition from '@/components/PageTransition';
 // Form validation schema
 const contactSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  organization: z.string().min(2, { message: "Organization must be at least 2 characters." }),
+  company: z.string().min(2, { message: "Company must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid business email." }),
-  type: z.enum(["project", "partnership", "venture", "general"]),
+  project: z.string().min(5, { message: "Project must be at least 5 characters." }),
+  budget: z.string().optional(),
   message: z.string().min(10, { message: "Message details must be at least 10 characters." }),
 });
 
@@ -35,7 +36,7 @@ export default function Contact() {
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      type: "project"
+      budget: ""
     }
   });
 
@@ -55,7 +56,7 @@ export default function Contact() {
         
         {/* Intro */}
         <section className="flex flex-col gap-4 max-w-3xl">
-          <span className="text-xs text-indigo-400 font-bold font-heading uppercase tracking-widest">
+          <span className="text-xs text-purple-400 font-bold font-heading uppercase tracking-widest">
             Inquiries
           </span>
           <h1 className="text-4xl sm:text-5xl font-bold font-heading text-white tracking-tight leading-[1.1]">
@@ -76,14 +77,14 @@ export default function Contact() {
             <div className="flex flex-col gap-6">
               
               <div className="glass-panel p-6 rounded-2xl flex items-start gap-4">
-                <div className="p-2.5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
+                <div className="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-xs text-neutral-500 font-semibold uppercase font-heading">
                     Electronic Mail
                   </h4>
-                  <a href="mailto:hello@noyeq.com" className="text-sm font-bold text-white hover:text-indigo-400 transition-colors mt-0.5 block">
+                  <a href="mailto:hello@noyeq.com" className="text-sm font-bold text-white hover:text-purple-400 transition-colors mt-0.5 block">
                     hello@noyeq.com
                   </a>
                 </div>
@@ -146,7 +147,7 @@ export default function Contact() {
           {/* RIGHT: Form */}
           <div className="lg:col-span-8">
             <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/[0.08] relative overflow-hidden">
-              <div className="absolute inset-0 bg-radial-[circle_at_center,rgba(99,102,241,0.02)_0%,transparent_70%] pointer-events-none" />
+              <div className="absolute inset-0 bg-radial-[circle_at_center,rgba(168,85,247,0.02)_0%,transparent_70%] pointer-events-none" />
 
               {isSuccess ? (
                 <motion.div 
@@ -179,20 +180,20 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <Label htmlFor="organization" className="text-xs text-neutral-300 font-semibold">Organization</Label>
+                      <Label htmlFor="company" className="text-xs text-neutral-300 font-semibold">Company</Label>
                       <Input
-                        id="organization"
+                        id="company"
                         placeholder="e.g. Acme Corp"
-                        {...register("organization")}
-                        className="bg-white/[0.02] border-white/[0.08] rounded-xl h-11 text-sm focus-visible:ring-indigo-500 focus-visible:border-indigo-500 placeholder-neutral-600 focus:bg-white/[0.04] transition-colors"
+                        {...register("company")}
+                        className="bg-white/[0.02] border-white/[0.08] rounded-xl h-11 text-sm focus-visible:ring-purple-500 focus-visible:border-purple-500 placeholder-neutral-600 focus:bg-white/[0.04] transition-colors"
                       />
-                      {errors.organization && (
-                        <span className="text-[11px] text-rose-400 font-medium pl-1">{errors.organization.message}</span>
+                      {errors.company && (
+                        <span className="text-[11px] text-rose-400 font-medium pl-1">{errors.company.message}</span>
                       )}
                     </div>
                   </div>
 
-                  {/* Email & Inquiry Type */}
+                  {/* Email & Project */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-2">
                       <Label htmlFor="email" className="text-xs text-neutral-300 font-semibold">Business Email</Label>
@@ -201,7 +202,7 @@ export default function Contact() {
                         type="email"
                         placeholder="e.g. john@acme.com"
                         {...register("email")}
-                        className="bg-white/[0.02] border-white/[0.08] rounded-xl h-11 text-sm focus-visible:ring-indigo-500 focus-visible:border-indigo-500 placeholder-neutral-600 focus:bg-white/[0.04] transition-colors"
+                        className="bg-white/[0.02] border-white/[0.08] rounded-xl h-11 text-sm focus-visible:ring-purple-500 focus-visible:border-purple-500 placeholder-neutral-600 focus:bg-white/[0.04] transition-colors"
                       />
                       {errors.email && (
                         <span className="text-[11px] text-rose-400 font-medium pl-1">{errors.email.message}</span>
@@ -209,24 +210,28 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <Label htmlFor="type" className="text-xs text-neutral-300 font-semibold">Inquiry Category</Label>
-                      <select
-                        id="type"
-                        {...register("type")}
-                        className="w-full bg-[#0d0d12] border border-white/[0.08] rounded-xl h-11 px-3 text-sm text-neutral-300 focus:outline-none focus:border-indigo-500 focus:bg-white/[0.04] transition-colors appearance-none cursor-pointer"
-                        style={{
-                          backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23a3a3a3' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
-                          backgroundPosition: 'right 0.75rem center',
-                          backgroundSize: '1.25rem',
-                          backgroundRepeat: 'no-repeat'
-                        }}
-                      >
-                        <option value="project">Project Request</option>
-                        <option value="partnership">Business Partnership</option>
-                        <option value="venture">Venture Pitch</option>
-                        <option value="general">General Message</option>
-                      </select>
+                      <Label htmlFor="project" className="text-xs text-neutral-300 font-semibold">Project Name / Type</Label>
+                      <Input
+                        id="project"
+                        placeholder="e.g. E-commerce App"
+                        {...register("project")}
+                        className="bg-white/[0.02] border-white/[0.08] rounded-xl h-11 text-sm focus-visible:ring-purple-500 focus-visible:border-purple-500 placeholder-neutral-600 focus:bg-white/[0.04] transition-colors"
+                      />
+                      {errors.project && (
+                        <span className="text-[11px] text-rose-400 font-medium pl-1">{errors.project.message}</span>
+                      )}
                     </div>
+                  </div>
+
+                  {/* Budget */}
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="budget" className="text-xs text-neutral-300 font-semibold">Budget (Optional)</Label>
+                    <Input
+                      id="budget"
+                      placeholder="e.g. $50k - $100k"
+                      {...register("budget")}
+                      className="bg-white/[0.02] border-white/[0.08] rounded-xl h-11 text-sm focus-visible:ring-purple-500 focus-visible:border-purple-500 placeholder-neutral-600 focus:bg-white/[0.04] transition-colors"
+                    />
                   </div>
 
                   {/* Message details */}
@@ -237,7 +242,7 @@ export default function Contact() {
                       rows={5}
                       placeholder="Outline project scopes, server specifications, or partnership ideas..."
                       {...register("message")}
-                      className="bg-white/[0.02] border-white/[0.08] rounded-xl text-sm focus-visible:ring-indigo-500 focus-visible:border-indigo-500 placeholder-neutral-600 focus:bg-white/[0.04] transition-colors resize-none p-3"
+                      className="bg-white/[0.02] border-white/[0.08] rounded-xl text-sm focus-visible:ring-purple-500 focus-visible:border-purple-500 placeholder-neutral-600 focus:bg-white/[0.04] transition-colors resize-none p-3"
                     />
                     {errors.message && (
                       <span className="text-[11px] text-rose-400 font-medium pl-1">{errors.message.message}</span>

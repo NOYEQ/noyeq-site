@@ -17,11 +17,11 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "NOYEQ | Ecosystem of Digital Products, AI, and Software Craftsmanship",
+    default: "NOYEQ | Engineering Tomorrow. Building Beyond.",
     template: "%s | NOYEQ"
   },
-  description: "NOYEQ is the parent company behind NQForge and a growing suite of digital products, AI automation tools, mobile applications, and enterprise SaaS solutions.",
-  keywords: ["NOYEQ", "NQForge", "Software Studio", "Enterprise Systems", "AI Solutions", "Web Applications", "TypeScript", "Dotnet Core", "UX Design"],
+  description: "NOYEQ is a technology company building custom software, AI-powered solutions, web and mobile applications, internal platforms, and future digital products.",
+  keywords: ["NOYEQ", "Custom Software", "Web Applications", "Mobile Applications", "AI Solutions", "Digital Products", "Developer Tools", "Technology Ventures", "Next.js", "TypeScript", ".NET"],
   authors: [{ name: "NOYEQ Team" }],
   creator: "NOYEQ",
   metadataBase: new URL("https://noyeq.com"),
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://noyeq.com",
-    title: "NOYEQ | Building the Future through Software & AI",
-    description: "Discover the NOYEQ digital product ecosystem and custom software engineering solutions.",
+    title: "NOYEQ | Engineering Tomorrow. Building Beyond.",
+    description: "NOYEQ builds software for clients and creates products, platforms, and technology ventures for the future.",
     siteName: "NOYEQ",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NOYEQ | Building the Future through Software & AI",
-    description: "Discover the NOYEQ digital product ecosystem and custom software engineering solutions.",
+    title: "NOYEQ | Engineering Tomorrow. Building Beyond.",
+    description: "NOYEQ builds software, creates products, and engineers future technology ventures.",
   },
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "64x64", type: "image/x-icon" }],
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#030303",
+  themeColor: "#0b1020",
   width: "device-width",
   initialScale: 1,
 };
@@ -63,10 +63,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${outfit.variable} h-full antialiased dark`}
-      style={{ colorScheme: 'dark' }}
+      className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col relative text-white bg-[#030303]">
+      <body className="min-h-full flex flex-col relative bg-background text-foreground">
         {/* Ambient background with grids and glows */}
         <AnimatedBackground />
 

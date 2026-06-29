@@ -11,13 +11,13 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Sectors', path: '/sectors' },
+  { name: 'Ventures', path: '/products' },
+  { name: 'Projects', path: '/projects' },
+  { name: 'Innovation', path: '/innovation' },
   { name: 'About', path: '/about' },
-  { name: 'Products', path: '/products' },
-  { name: 'Services', path: '/services' },
-  { name: 'Process', path: '/process' },
-  { name: 'Technology', path: '/technology' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Careers', path: '/careers' },
+  { name: 'Contact', path: '/contact' },
 ];
 
 export default function Navbar() {
@@ -46,7 +46,7 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className={`mx-auto max-w-7xl w-full pointer-events-auto rounded-full transition-all duration-300 ${
           scrolled 
-            ? 'glass-panel bg-neutral-950/70 border-white/[0.08] shadow-2xl py-3 px-6' 
+            ? 'bg-neutral-950/95 backdrop-blur-xl border border-white/10 shadow-2xl py-3 px-6' 
             : 'bg-transparent border-transparent py-5 px-4'
         }`}
       >
@@ -83,11 +83,6 @@ export default function Navbar() {
                     />
                   )}
                   {item.name}
-                  {item.name === 'Careers' && (
-                    <span className="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
-                      Soon
-                    </span>
-                  )}
                 </Link>
               );
             })}
@@ -102,7 +97,7 @@ export default function Navbar() {
                 "bg-white text-black hover:bg-neutral-200 rounded-full text-xs font-semibold px-5 h-9 transition-all duration-300 glow-btn flex items-center gap-1.5"
               )}
             >
-              Get in Touch
+              Start a Project
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -128,7 +123,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="absolute left-4 right-4 mt-2 p-6 glass-panel bg-neutral-950/95 border-white/[0.08] rounded-2xl shadow-2xl md:hidden pointer-events-auto"
+            className="absolute left-4 right-4 mt-2 p-6 glass-panel rounded-2xl shadow-2xl md:hidden pointer-events-auto"
           >
             <div className="flex flex-col gap-4">
               {navItems.map((item, index) => (
@@ -147,13 +142,7 @@ export default function Navbar() {
                   >
                     <div className="flex items-center justify-between">
                       <span>{item.name}</span>
-                      {item.name === 'Careers' ? (
-                        <span className="text-[10px] px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
-                          Coming Soon
-                        </span>
-                      ) : (
-                        <ArrowRight className="w-4 h-4 opacity-50" />
-                      )}
+                      <ArrowRight className="w-4 h-4 opacity-50" />
                     </div>
                   </Link>
                 </motion.div>
@@ -168,7 +157,7 @@ export default function Navbar() {
                     "w-full bg-white text-black hover:bg-neutral-200 rounded-full py-5 text-sm font-semibold justify-center shadow-lg flex items-center"
                   )}
                 >
-                  Get in Touch
+                  Start a Project
                 </Link>
               </div>
             </div>

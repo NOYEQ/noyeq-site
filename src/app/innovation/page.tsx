@@ -20,7 +20,7 @@ const techGroups = [
   {
     title: "Server & Application Logic",
     icon: Server,
-    color: "text-indigo-400 bg-indigo-500/10 border-indigo-500/20",
+    color: "text-purple-400 bg-purple-500/10 border-purple-500/20",
     techs: [
       { name: ".NET Core (C#)", role: "Enterprise backend service layer", detail: "Supports massive parallel executions, multi-threading, and secure APIs." },
       { name: "Node.js & Express", role: "Fast asynchronous API routing", detail: "Used for developer utilities, compilers, and serverless edge functions." },
@@ -52,18 +52,18 @@ const techGroups = [
 const philosophyItems = [
   {
     icon: ShieldCheck,
-    title: "Strict Static Typing",
-    desc: "We enforce complete static typing (TypeScript & C#). Any code utilizing 'any' typings or loosely structured inputs is rejected at compile time. This yields absolute security."
+    title: "Strict Validation",
+    desc: "We enforce complete verification across all ventures. From static code typing to rigorous material sourcing for physical products, we reject assumptions."
   },
   {
     icon: Zap,
-    title: "Performance Budgets",
-    desc: "Our products follow strict speed parameters: sub-50ms server responses, sub-second client renders, and 100/100 scores in search engine optimization and responsiveness audits."
+    title: "Efficiency Budgets",
+    desc: "Our solutions follow strict speed and efficiency parameters. Whether it is a sub-50ms server response or streamlined supply chain logistics, we optimize relentlessly."
   },
   {
     icon: Repeat,
-    title: "Idempotent Architectures",
-    desc: "Our databases, background compilers, and task queues are structured to support safe, repetitive actions, eliminating duplicates and preventing system corruptions."
+    title: "Scalable Architectures",
+    desc: "Our systems, both digital and physical, are structured to support safe, repetitive scaling. We eliminate bottlenecks and prevent operational friction."
   }
 ];
 
@@ -74,14 +74,14 @@ export default function Technology() {
         
         {/* Page Title */}
         <section className="flex flex-col gap-4 max-w-3xl">
-          <span className="text-xs text-indigo-400 font-bold font-heading uppercase tracking-widest">
-            Engineering Core
+          <span className="text-xs text-purple-400 font-bold font-heading uppercase tracking-widest">
+            Innovation Engine
           </span>
           <h1 className="text-4xl sm:text-5xl font-bold font-heading text-white tracking-tight leading-[1.1]">
-            Our Engineering Philosophy & Stack
+            Our Innovation Framework
           </h1>
           <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
-            We select technologies based on scalability, speed, and standard developer compliance. Our products combine stable C# enterprise modules with modern React and Next.js interfaces.
+            We approach global problems with a strict methodology. Whether we are engineering cloud architectures or supply chains, we deploy scalable, rigorous processes that guarantee quality.
           </p>
         </section>
 
@@ -94,7 +94,7 @@ export default function Technology() {
                 {/* Visual accent */}
                 <div className="absolute right-0 bottom-0 w-24 h-24 bg-white/[0.01] rounded-tl-full pointer-events-none" />
                 
-                <div className="p-2.5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 w-fit">
+                <div className="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 w-fit">
                   <Icon className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold font-heading text-white">{item.title}</h3>
@@ -107,9 +107,9 @@ export default function Technology() {
         {/* Tech Group Catalog */}
         <section className="flex flex-col gap-16 border-t border-white/[0.06] pt-16">
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-white">Technological Matrix</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-white">Digital Technology Matrix</h2>
             <p className="text-neutral-400 text-sm sm:text-base max-w-xl">
-              An inventory of core framework selections deployed across NQForge, AI pipelines, and enterprise systems.
+              An inventory of core framework selections deployed across NOYEQ Digital&apos;s software systems, AI pipelines, and enterprise architectures.
             </p>
           </div>
 
@@ -149,9 +149,9 @@ export default function Technology() {
         <section className="glass-panel rounded-3xl p-8 sm:p-12 border border-white/[0.06] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
           <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 blur-[80px] pointer-events-none" />
           <div className="flex flex-col gap-4 max-w-xl">
-            <h3 className="text-2xl font-bold font-heading text-white">Review our system architectures</h3>
+            <h3 className="text-2xl font-bold font-heading text-white">Partner with our innovators</h3>
             <p className="text-neutral-400 text-sm leading-relaxed">
-              We compile code following strict guidelines, supporting docker deployment, serverless routing rules, and multi-region database replications. Let&apos;s build your enterprise architecture.
+              We apply strict innovation principles to every project we undertake. If you are looking to build a digital platform or a physical venture, let&apos;s explore how we can architect the solution.
             </p>
           </div>
           <Link 
@@ -161,7 +161,7 @@ export default function Technology() {
               "bg-white text-black hover:bg-neutral-200 rounded-full font-semibold px-6 h-11 flex-shrink-0 transition-all duration-300 glow-btn flex items-center gap-1.5 justify-center"
             )}
           >
-            Consult Architect
+            Consult Team
             <ArrowRight className="w-4 h-4" />
           </Link>
         </section>

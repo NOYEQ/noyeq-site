@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion, type Variants } from 'framer-motion';
-import { ArrowRight, Cpu, Layers, Sparkles, Terminal, Activity, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Layers, Sparkles, Terminal, Activity, ChevronRight, CheckCircle2 } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import PageTransition from '@/components/PageTransition';
@@ -31,37 +31,37 @@ const itemVariants: Variants = {
 };
 
 const stats = [
-  { value: "99.99%", label: "System Reliability", detail: "Active SLA" },
-  { value: "10M+", label: "Tasks Compiled", detail: "Across NQForge" },
-  { value: "100%", label: "Craftsmanship Focus", detail: "Zero Compromises" },
-  { value: "40ms", label: "Average Response Time", detail: "Global Edge Network" }
+  { value: "5+", label: "Active Sectors", detail: "Digital & Physical" },
+  { value: "10M+", label: "People Reached", detail: "Across Global Solutions" },
+  { value: "100%", label: "Impact Focus", detail: "Zero Compromises" },
+  { value: "1", label: "Unified Goal", detail: "A Better World" }
 ];
 
 const featuredProducts = [
   {
-    title: "NQForge",
+    title: "NOYEQ Digital",
     tag: "Active",
     tagColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-    description: "A comprehensive developer-focused platform containing premium online utilities, compilers, calculators, and API testing suites. Crafting code at scale.",
-    features: ["Fully Serverless", "Zero Configuration", "Instant Compilation"],
-    link: "/products",
+    description: "Our foundational software division. Crafting intelligent systems, web platforms, and mobile solutions to digitize and optimize global businesses.",
+    features: ["Custom Software", "Digital Infrastructure", "Automation Logic"],
+    link: "/sectors",
     icon: Terminal
   },
   {
-    title: "NOYEQ Core AI",
-    tag: "Beta",
-    tagColor: "bg-indigo-500/20 text-indigo-400 border-indigo-500/30",
-    description: "Next-generation autonomous agent orchestration platform. Integrate contextual reasoning models directly into business automation systems with ease.",
-    features: ["Agentic Frameworks", "Context-Aware Logic", "Secure Orchestration"],
+    title: "NOYEQ Ventures",
+    tag: "Active",
+    tagColor: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+    description: "Our internal startup incubator. Building proprietary products like NQ Forge, developer tools, and AI agents for the future.",
+    features: ["SaaS Products", "Developer Tools", "Autonomous AI"],
     link: "/products",
     icon: Sparkles
   },
   {
-    title: "Enterprise Systems",
+    title: "NOYEQ Foods",
     tag: "Pipeline",
     tagColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-    description: "Bespoke SaaS architectures, central business automations, and containerized internal databases built for unmatched high-performance workflows.",
-    features: ["Active Replication", "Ironclad Security", "Docker & Kubernetes Ready"],
+    description: "Our expansion into physical consumer goods, beginning with a sustainable, high-quality peanut butter product line based in Sri Lanka.",
+    features: ["FMCG Expansion", "Sustainable Sourcing", "Local Impact"],
     link: "/products",
     icon: Layers
   }
@@ -69,20 +69,20 @@ const featuredProducts = [
 
 const values = [
   {
-    title: "Innovation & Agility",
-    description: "Pioneering new standards in digital architecture. We iterate fast, test thoroughly, and deploy continuously."
+    title: "Global Impact",
+    description: "We are driven by the vision of teaming up for a better world through universal, accessible solutions across multiple industries."
   },
   {
-    title: "Engineering Excellence",
-    description: "Our systems are built on scalable architectures (.NET Core, Next.js, and Docker) designed to outlive trends."
+    title: "Universal Foundation",
+    description: "Whether writing software or creating physical goods, our methodology is rooted in precision, sustainability, and scale."
   },
   {
-    title: "Human-Centered Design",
-    description: "We merge premium visual aesthetics with precise functionality. Beautiful UI leads to effortless UX."
+    title: "Human-Centered",
+    description: "Every product we incubate starts with real human needs. We merge beautiful aesthetics with deep functionality."
   },
   {
-    title: "Long-Term Craftsmanship",
-    description: "We don't build disposable code. Every line is formatted, documented, and optimized for sustainable scale."
+    title: "Continuous Evolution",
+    description: "We never stagnate. NOYEQ acts as a perpetual motion machine, constantly expanding into new sectors and new ventures."
   }
 ];
 
@@ -102,27 +102,27 @@ export default function Home() {
             {/* Glowing top badge */}
             <motion.div 
               variants={itemVariants}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-neutral-300 text-xs backdrop-blur-md"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.02] border border-white/[0.05] text-neutral-400 text-xs backdrop-blur-md"
             >
-              <Cpu className="w-3.5 h-3.5 text-indigo-400 animate-pulse" />
-              <span>Announcing NOYEQ Core Ecosystem v2.0</span>
+              <Sparkles className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
+              <span>Teaming up for a better world.</span>
               <ChevronRight className="w-3 h-3 text-neutral-500" />
             </motion.div>
 
             {/* Main Title Heading */}
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gradient-purple-cyan leading-[1.1] pb-1"
+              className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-[1.05] pb-2 mt-4"
             >
-              We craft the software structures of tomorrow.
+              Many Forms.<br className="hidden sm:block" /> One Core.
             </motion.h1>
 
             {/* Supporting Copy */}
             <motion.p 
               variants={itemVariants}
-              className="text-neutral-400 text-base sm:text-xl max-w-2xl leading-relaxed"
+              className="text-neutral-400 text-lg sm:text-xl max-w-2xl leading-relaxed mt-2"
             >
-              NOYEQ is a premium technology ecosystem. We build highly refined web architectures, autonomous intelligence systems, custom APIs, and scalable digital products.
+              NOYEQ is a global parent company building solutions across sectors. From state-of-the-art software systems to physical consumer products, we engineer a better future.
             </motion.p>
 
             {/* Buttons & Call to Actions */}
@@ -141,13 +141,13 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link 
-                href="/services" 
+                href="/sectors" 
                 className={cn(
                   buttonVariants({ size: "lg", variant: "outline" }),
                   "border-white/[0.08] hover:bg-white/[0.04] hover:text-white rounded-full font-semibold px-8 h-12 text-neutral-300 backdrop-blur-sm flex items-center justify-center"
                 )}
               >
-                Our Services
+                Our Sectors
               </Link>
             </motion.div>
           </motion.div>
@@ -181,10 +181,10 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="flex flex-col gap-4">
               <h2 className="text-3xl sm:text-4xl font-bold font-heading text-white">
-                The NOYEQ Ecosystem
+                The NOYEQ Divisions
               </h2>
               <p className="text-neutral-400 max-w-xl text-sm sm:text-base leading-relaxed">
-                We are building a unified network of software, AI engines, utility tools, and business platforms. Explore our key active and upcoming initiatives.
+                We are building a unified network of digital and physical solutions. From our core software agency to our upcoming food and product lines.
               </p>
             </div>
             <Link 
@@ -252,10 +252,10 @@ export default function Home() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 flex flex-col gap-6">
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-white">
-              Built on Craftsmanship & Long-term Thinking.
+              Built on Universal Excellence.
             </h2>
             <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
-              We design software designed to stand the test of time. We believe in massive details, pixel-perfect alignment, rigorous unit testing, and highly responsive interactions.
+              Whether we are deploying massive cloud architectures or sourcing ingredients for consumer goods, our standards remain absolute. We believe in massive details and sustainable impact.
             </p>
             <div className="h-[1px] w-full bg-white/[0.08]" />
             <div className="flex items-center gap-3">
@@ -263,8 +263,8 @@ export default function Home() {
                 <Activity className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-white">Sustained Velocity</h4>
-                <p className="text-xs text-neutral-400">Continuous deployment backed by automated tests.</p>
+                <h4 className="text-sm font-semibold text-white">Sustained Operations</h4>
+                <p className="text-xs text-neutral-400">Continuous growth backed by meticulous planning.</p>
               </div>
             </div>
           </div>
@@ -287,14 +287,14 @@ export default function Home() {
           </div>
         </section>
 
-        {/* PIPELINE / GROWTH TIMELINE */}
+        {/* DEVELOPMENT PROCESS TIMELINE */}
         <section className="flex flex-col gap-12 relative">
           <div className="flex flex-col gap-4 text-center items-center">
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-white">
-              Ecosystem Roadmap & Growth
+              Our Universal Process
             </h2>
             <p className="text-neutral-400 max-w-xl text-sm sm:text-base leading-relaxed">
-              Tracing our path from NQForge launches to corporate milestones, continuous technology integrations, and our upcoming 2027 enterprise pipelines.
+              How we transform complex global challenges into refined, high-performance solutions across sectors.
             </p>
           </div>
 
@@ -302,47 +302,47 @@ export default function Home() {
             {/* Timeline center line */}
             <div className="absolute left-[21px] sm:left-1/2 top-0 bottom-0 w-[2px] bg-white/[0.08]" />
 
-            {/* Inception */}
+            {/* Step 1 & 2 */}
             <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-12">
-              <div className="absolute left-[16px] sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.8)]" />
+              <div className="absolute left-[16px] sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.8)]" />
               <div className="pl-12 sm:pl-0 sm:w-[45%] text-left sm:text-right">
-                <span className="text-indigo-400 font-heading text-xs font-semibold">Q1 2025</span>
-                <h3 className="text-lg font-bold text-white mt-1">NOYEQ Inception</h3>
-                <p className="text-xs text-neutral-400 mt-1 leading-relaxed">Core systems designed. Corporate structure initialized to support an upcoming suite of AI-driven tools.</p>
+                <span className="text-purple-400 font-heading text-xs font-semibold uppercase tracking-wider">Phase 01</span>
+                <h3 className="text-lg font-bold text-white mt-1">Discover & Strategy</h3>
+                <p className="text-xs text-neutral-400 mt-1 leading-relaxed">Deep analysis of the market objective. We map out operations, supply chains, or technical architecture before taking action.</p>
               </div>
               <div className="hidden sm:block sm:w-[45%]" />
             </div>
 
-            {/* NQForge Launch */}
+            {/* Step 3 & 4 */}
             <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-12">
               <div className="absolute left-[16px] sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.8)]" />
               <div className="hidden sm:block sm:w-[45%]" />
               <div className="pl-12 sm:pl-0 sm:w-[45%] text-left">
-                <span className="text-cyan-400 font-heading text-xs font-semibold">Q3 2025</span>
-                <h3 className="text-lg font-bold text-white mt-1">NQForge Beta Release</h3>
-                <p className="text-xs text-neutral-400 mt-1 leading-relaxed">Successfully launched NQForge, consolidating core calculations, compilers, and API developer utilities into a single fast platform.</p>
+                <span className="text-cyan-400 font-heading text-xs font-semibold uppercase tracking-wider">Phase 02</span>
+                <h3 className="text-lg font-bold text-white mt-1">Design & Incubate</h3>
+                <p className="text-xs text-neutral-400 mt-1 leading-relaxed">Creating pixel-perfect interfaces or perfecting physical prototypes. Strict quality control ensures rapid, stable progress.</p>
               </div>
             </div>
 
-            {/* Present Integration */}
+            {/* Step 5 */}
             <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-12">
-              <div className="absolute left-[16px] sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.8)]" />
+              <div className="absolute left-[16px] sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.8)]" />
               <div className="pl-12 sm:pl-0 sm:w-[45%] text-left sm:text-right">
-                <span className="text-indigo-400 font-heading text-xs font-semibold">Q2 2026 (Current)</span>
-                <h3 className="text-lg font-bold text-white mt-1">Unified Infrastructure</h3>
-                <p className="text-xs text-neutral-400 mt-1 leading-relaxed">Consolidating ecosystem branding. Launching the official corporate portal, setting up ready frameworks for AI logic APIs.</p>
+                <span className="text-purple-400 font-heading text-xs font-semibold uppercase tracking-wider">Phase 03</span>
+                <h3 className="text-lg font-bold text-white mt-1">Test & Refine</h3>
+                <p className="text-xs text-neutral-400 mt-1 leading-relaxed">Rigorous testing for security, performance, or consumer satisfaction. We polish every detail before scaling.</p>
               </div>
               <div className="hidden sm:block sm:w-[45%]" />
             </div>
 
-            {/* Future Ventures */}
+            {/* Step 6 & 7 */}
             <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-12">
-              <div className="absolute left-[16px] sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-neutral-600" />
+              <div className="absolute left-[16px] sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.8)]" />
               <div className="hidden sm:block sm:w-[45%]" />
               <div className="pl-12 sm:pl-0 sm:w-[45%] text-left">
-                <span className="text-neutral-500 font-heading text-xs font-semibold">2027 & Beyond</span>
-                <h3 className="text-lg font-bold text-neutral-300 mt-1">Autonomous Systems</h3>
-                <p className="text-xs text-neutral-500 mt-1 leading-relaxed">Unveiling advanced agent architectures, mobile workspace components, and robust custom business softwares under the NOYEQ brand.</p>
+                <span className="text-emerald-500 font-heading text-xs font-semibold uppercase tracking-wider">Phase 04</span>
+                <h3 className="text-lg font-bold text-white mt-1">Launch & Scale</h3>
+                <p className="text-xs text-neutral-400 mt-1 leading-relaxed">Deploying the solution to the global market. We provide ongoing support, supply chain logistics, and optimization.</p>
               </div>
             </div>
           </div>
@@ -360,14 +360,14 @@ export default function Home() {
             {/* Ambient inner glow */}
             <div className="absolute inset-0 bg-radial-[circle_at_center,rgba(99,102,241,0.06)_0%,transparent_70%] pointer-events-none" />
 
-            <span className="px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase">
+            <span className="px-3.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wide uppercase">
               NOYEQ Intel
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold font-heading text-white max-w-2xl leading-[1.15]">
-              Stay aligned with our technological progress.
+              Stay aligned with our global impact.
             </h2>
             <p className="text-neutral-400 max-w-md text-sm leading-relaxed">
-              Join our exclusive developer newsletter. Receive brief, periodic briefs detailing code improvements, project releases, and engineering breakthroughs.
+              Join our exclusive network. Receive periodic updates on our new software ventures, physical products, and cross-sector initiatives.
             </p>
 
             <Link 

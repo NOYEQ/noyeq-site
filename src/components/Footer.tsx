@@ -19,10 +19,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-white/[0.05] bg-neutral-950/60 backdrop-blur-md pt-20 pb-10 overflow-hidden">
+    <footer className="relative border-t border-white/[0.05] bg-black/40 backdrop-blur-xl pt-20 pb-10 overflow-hidden">
       {/* Glow highlight */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[1px] bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
-      <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[300px] h-[100px] rounded-full bg-indigo-500/10 blur-[60px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+      <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[300px] h-[100px] rounded-full bg-purple-500/10 blur-[60px]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16">
@@ -39,7 +39,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-neutral-400 text-sm max-w-sm leading-relaxed">
-              NOYEQ is a leading global technology house building the future of software, artificial intelligence, and automated platforms. We design digital products that empower human potential.
+              NOYEQ is the global mother company teaming up for a better world through universal solutions, spanning digital software, physical products, and future ventures.
             </p>
             
             {/* Social icons */}
@@ -62,31 +62,28 @@ export default function Footer() {
           {/* Links columns */}
           <div className="flex flex-col gap-4">
             <h3 className="font-heading text-white text-sm font-semibold tracking-wider uppercase">
-              Ecosystem
+              Explore
             </h3>
             <ul className="flex flex-col gap-3 text-neutral-400 text-sm">
               <li>
+                <Link href="/sectors" className="hover:text-white transition-colors">
+                  Sectors
+                </Link>
+              </li>
+              <li>
                 <Link href="/products" className="hover:text-white transition-colors">
-                  Products Portfolio
+                  NOYEQ Ventures
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  NQForge
-                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                    Active
-                  </span>
+                <Link href="/projects" className="hover:text-white transition-colors">
+                  Projects
                 </Link>
               </li>
               <li>
-                <span className="text-neutral-500 cursor-default">
-                  Future AI Platforms
-                </span>
-              </li>
-              <li>
-                <span className="text-neutral-500 cursor-default">
-                  Enterprise Solutions
-                </span>
+                <Link href="/innovation" className="hover:text-white transition-colors">
+                  Innovation
+                </Link>
               </li>
             </ul>
           </div>
@@ -98,30 +95,12 @@ export default function Footer() {
             <ul className="flex flex-col gap-3 text-neutral-400 text-sm">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
-                  About Us
+                  About NOYEQ
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/process" className="hover:text-white transition-colors">
-                  Our Process
-                </Link>
-              </li>
-              <li>
-                <Link href="/technology" className="hover:text-white transition-colors">
-                  Technology Stack
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  Careers
-                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
-                    Soon
-                  </span>
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -133,7 +112,7 @@ export default function Footer() {
               Subscribe
             </h3>
             <p className="text-neutral-400 text-xs leading-relaxed">
-              Stay updated on product launches and technological breakthroughs from the NOYEQ labs.
+              Stay updated on NOYEQ product launches, engineering notes, and upcoming ventures.
             </p>
             <form onSubmit={handleSubscribe} className="relative mt-2">
               <input
@@ -142,7 +121,7 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full bg-white/[0.03] border border-white/[0.08] rounded-full py-2.5 pl-4 pr-10 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-full bg-white/[0.03] border border-white/[0.08] rounded-full py-2.5 pl-4 pr-10 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-purple-500 transition-colors"
               />
               <button
                 type="submit"
