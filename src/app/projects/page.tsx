@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Code2 } from 'lucide-react';
+import Image from 'next/image';
 import PageTransition from '@/components/PageTransition';
 
 const projectsList = [
@@ -40,6 +41,16 @@ const projectsList = [
     description: "An autonomous agent that crawls competitor websites for pricing changes and updates an internal corporate tracking database.",
     techStack: ["Python", "Playwright", "AWS Lambda", "SQL Server"],
     thumbnail: "bg-gradient-to-tr from-emerald-900/30 to-black border border-white/[0.05]"
+  },
+  {
+    id: 5,
+    title: "Hire Management System",
+    category: "Enterprise System",
+    status: "Active",
+    description: "A fullstack web application for running day-to-day vehicle hire operations. Features role-based access, automated testing, and comprehensive dashboards. Originally a desktop app, it's built as a layered .NET solution for future web scalability.",
+    techStack: ["ASP.NET Core MVC", "EF Core", "MySQL", "Bootstrap 5"],
+    thumbnail: "bg-neutral-900 border border-white/[0.05]",
+    image: "/hire-management.jpg"
   }
 ];
 
@@ -72,10 +83,14 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-col gap-6 group"
             >
-              {/* Thumbnail Placeholder */}
+              {/* Thumbnail / Image Placeholder */}
               <div className={`w-full aspect-video rounded-3xl ${project.thumbnail} relative overflow-hidden flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]`}>
-                <Code2 className="w-12 h-12 text-white/10" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {project.image ? (
+                  <Image src={project.image} alt={project.title} fill className="object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                ) : (
+                  <Code2 className="w-12 h-12 text-white/10" />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Project Info */}
